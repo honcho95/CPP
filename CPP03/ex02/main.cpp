@@ -1,14 +1,29 @@
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-int main( void )
+int main(void)
 {
-    FragTrap ash( "Ash" );
-    FragTrap ash2( ash );
+    ClapTrap a("Oliveira");
+    ScavTrap b("Makhachev");
+    FragTrap c("Ferguson");
 
-    ash.attack( "the air" );
-    ash.takeDamage( 10 );
-    ash.beRepaired( 10 );
-    ash.highFive();
+    // Testing ClapTrap
+    a.attack("Makhachev");
+    b.takeDamage(5);
+    a.beRepaired(3);
 
-    return EXIT_SUCCESS;
+    // Testing ScavTrap
+    b.attack("Oliveira");
+    a.takeDamage(5);
+    b.beRepaired(5);
+    b.guardGate();
+
+    // Testing FragTrap
+    c.attack("Oliveira");
+    a.takeDamage(15);
+    c.beRepaired(10);
+    c.highFivesGuys();
+
+    return 0;
 }

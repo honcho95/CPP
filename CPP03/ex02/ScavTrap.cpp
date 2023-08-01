@@ -1,27 +1,37 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    this->_hitPoints = 100;
-    this->_energyPoints = 50;
-    this->_attackDamage = 20;
-
-    std::cout << "< ScavTrap > - " << this->_name << " constructed." << std::endl;
+    std::cout << "ScavTrap constructor called" << std::endl;
+    this->_hp = 100;
+    this->_ep = 50;
+    this->_ad = 20;
 }
 
-ScavTrap::~ScavTrap() {
-    std::cout << "< ScavTrap > - " << this->_name << " destructed." << std::endl;
+ScavTrap::~ScavTrap(void)
+{
+    std::cout << "ScavTrap destructor called" << std::endl;
 }
 
-void    ScavTrap::attack( std::string const& target ) {
-    if ( this->_energyPoints <= 0 ) {
-        std::cout << "< ScavTrap > - " << this->_name << " is out of energy." << std::endl;
-        return;
-    }
-    std::cout << "< ScavTrap > - " << this->_name << " attacks " << target << " at range, causing " << this->_attackDamage << " points of damage !" << std::endl;
-    this->_energyPoints -= 1;
+ScavTrap::ScavTrap(ScavTrap const &obj) : ClapTrap(obj) 
+{
+    std::cout << "Copy ScavTrap constructor called" << std::endl;
 }
 
-void    ScavTrap::guardGate() {
-    std::cout << "< ScavTrap > - " << this->_name << " is now in Gate keeper mode." << std::endl;
+ScavTrap &ScavTrap::operator=(ScavTrap const &obj)
+{
+    std::cout << "Copy ScavTrap assignment" << std::endl;
+    ClapTrap::operator=(obj);
+    return *this;
+}
+
+void ScavTrap::attack(const std::string& target)
+{
+    std::cout << "ScavTrap " << this->_name << " hits " << target 
+        << ", causing " << this->_ad << " points of damage!" << std::endl;
+}
+
+void ScavTrap::guardGate()
+{
+    std::cout << "ScavTrap " << this->_name << " has entered Gate keeper mode." << std::endl;
 }

@@ -1,4 +1,4 @@
-NAME = ScavTrap
+NAME = Serena
 
 SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp
 

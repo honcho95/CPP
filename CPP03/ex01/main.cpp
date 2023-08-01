@@ -1,14 +1,19 @@
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-int main( void )
+int main(void)
 {
-    ScavTrap ash( "Ash" );
-    ScavTrap ash2( ash );
+    ClapTrap a("Oliveira");
+    ScavTrap b("Makhachev");
 
-    ash.attack( "the air" );
-    ash.takeDamage( 10 );
-    ash.beRepaired( 10 );
-    ash.guardGate();
+    b.attack("Oliveira");
+    a.takeDamage(20);
+    a.beRepaired(3);
+    a.attack("Makhachev");
+    b.takeDamage(5);
+    b.takeDamage(5);
 
-    return EXIT_SUCCESS;
+    b.guardGate();
+
+    return 0;
 }

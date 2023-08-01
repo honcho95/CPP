@@ -1,6 +1,6 @@
-NAME = Repetitive
+NAME = Polymorphisme
 
-SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC		=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 CC 		= c++
 

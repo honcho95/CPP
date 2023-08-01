@@ -1,18 +1,19 @@
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef _FRAGTRAP_HPP_
+# define _FRAGTRAP_HPP_
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap
 {
-private:
-    FragTrap();
-
 public:
     FragTrap(std::string name);
-    ~FragTrap();
+    ~FragTrap(void);
 
-    void    highFive( void );
+    FragTrap(FragTrap const &obj);
+    FragTrap &operator=(FragTrap const &obj);
+
+    void attack(const std::string& target);
+    void highFivesGuys();
 };
 
-#endif // FRAGTRAP_HPP
+#endif

@@ -1,6 +1,6 @@
-NAME = Repetitive
+NAME = Abstract
 
-SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC		=	main.cpp AAnimal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 CC 		= c++
 

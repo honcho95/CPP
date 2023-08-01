@@ -1,29 +1,34 @@
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef _CLAPTRAP_HPP_
+# define _CLAPTRAP_HPP_
 
-#include <iostream>
+# include <iostream>
+# include <string>
+# include <cctype>
+# include <iomanip>
+# include <cstdlib>
+# include <fstream>
+# include <cmath>
 
 class ClapTrap
 {
 protected:
-    std::string     _name;
-    unsigned int    _hitPoints;
-    unsigned int    _energyPoints;
-    unsigned int    _attackDamage;
 
-    ClapTrap();
+	std::string     _name;
+    int             _hp;
+    unsigned int    _ep;     
+    unsigned int    _ad;
 
 public:
-    ClapTrap( std::string name );
-    ~ClapTrap();
 
-    ClapTrap(const ClapTrap &);
-    ClapTrap&       operator=(const ClapTrap& rhs);
+	ClapTrap(std::string name);
+	~ClapTrap(void);
 
-    void            attack(std::string const& target);
-    void            takeDamage(unsigned int amount);
-    void            beRepaired(unsigned int amount);
+	ClapTrap(ClapTrap const &obj);
+	ClapTrap &operator=(ClapTrap const &obj);
 
+	void attack(const std::string& target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
 };
 
-#endif // CLAPTRAP_HPP
+#endif
